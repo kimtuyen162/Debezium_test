@@ -1,0 +1,25 @@
+{
+    "name": "sales-source-connect",
+    "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "database.hostname": " 10.0.236.247",
+      "database.port": "1433",
+      "database.user": "sa",
+      "database.password": "123456",
+      "database.dbname": "sales_src",
+      "database.server.name": "TESTING2",
+      "table.whitelist": "dbo.test2",
+      "heartbeat.interval.ms": "5000",
+      "slot.name": "TEST_debezium",
+      "database.history.kafka.bootstrap.servers": "kafka101:9092, kafka102:9093, kafka103:9094",
+      "database.history.kafka.recovery.attempts": "10000",
+      "database.history.kafka.topic": "test.dbhistory.mysql",
+      "include.schema.changes": "false",
+      "schema.history.internal.kafka.topic": "schema-history",
+      "schema.history.internal.kafka.bootstrap.servers": "kafka101:9092, kafka102:9093, kafka103:9094",
+      "topic.prefix": "sql",
+      "transforms": "unwrap",
+      "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
+    }
+  }
+  

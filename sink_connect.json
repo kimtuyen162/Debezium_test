@@ -1,0 +1,22 @@
+{
+    "name": "jdbc-sink-sales-target",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "table.name.format": "trg_test2",
+      "topics": "TESTING2.dbo.test2",
+      "connection.url": "jdbc:sqlserver:// 10.0.236.247:1433;databaseName=sales_trg",
+      "connection.user": "sa",
+      "connection.password": "123456",
+      "auto.evolve": "true",
+      "auto.create": "false",
+      "insert.mode": "upsert",
+      "pk.fields": "id",
+      "pk.mode": "record_key",
+      "transforms": "createKey",
+      "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+      "transforms.createKey.fields": "id"
+  
+    }
+  }
+  
